@@ -1,0 +1,6 @@
+.btn.btn-outline-dark{
+    text-align: center;
+    width: 110px; 
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
