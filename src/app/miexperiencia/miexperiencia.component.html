@@ -1,81 +1,156 @@
-
-    <!-- Educacion y experiencia -->
-    <section>
-    <div class="container-fluid py-5" id="service">
-       
-        <div class="container">
-            
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Capacitacion</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Educacion & Experiencia</h1>
+<!-- Educacion y experiencia -->
+<section>
+  <div class="container-fluid py-5" id="service">
+    <div class="container">
+      <div
+        class="position-relative d-flex align-items-center justify-content-center"
+      >
+        <h1
+          class="display-1 text-uppercase text-white"
+          style="-webkit-text-stroke: 1px #dee2e6"
+        >
+          Capacitacion
+        </h1>
+        <h1 class="position-absolute text-uppercase text-primary">
+          Educacion & Experiencia
+        </h1>
+      </div>
+      <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="button">Editar</button>
+        <button class="btn btn-primary" type="button">Borrar</button>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-6">
+          <h3 class="mb-4" id="edu">Mi Educacion</h3>
+          <div class="border-left border-primary pt-2 pl-4 ml-2">
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">Instituto Dr Enrique Carbo</h5>
+              <p class="mb-2">
+                <strong>Secundario</strong> | <small>1995 - 2007</small>
+              </p>
+              <p>Me recibi con el titulo de bachiller mercantil</p>
             </div>
-            <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-primary" type="button">Editar</button>
-                <button class="btn btn-primary" type="button">Borrar</button>
-              </div>
-            <div class="row align-items-center">
-                
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Mi Educacion</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Instituto Dr Enrique Carbo</h5>
-                            <p class="mb-2"><strong>Secundario</strong> | <small>1995 - 2007</small></p>
-                            <p>Me recibi con el titulo de bachiller mercantil</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Instituto de capacitacion empresaria</h5>
-                            <p class="mb-2"><strong>Terciario</strong> | <small>2010 - 2013</small></p>
-                            <p>Me recibi con el titulo de administracion de empresas</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Argentina Programa 3.0</h5>
-                            <p class="mb-2"><strong>Programador full Stack jr</strong> | <small>2021 - Actualmente</small></p>
-                            <p>Actualmente cuento con conocimientos de varios lenguajes</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Conocimientos avanzados de hardware y office</h5>
-                            <p class="mb-2"><strong>Programas especiales</strong> | <small>2021 - Actualmente</small></p>
-                            <p>Manejo de sistema de algoritmo para manejo de datos de pacientes, facturacion y registros</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Experiencia Laboral</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
-                            <p class="mb-2"><strong>Argentina Programa</strong> | <small> Freelance</small></p>
-                            <p>He realizado mi primer portfolio web </p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Mi primera aplicación en angular</h5>
-                            <p class="mb-2"><strong>Argentina Programa</strong> | <small> Freelance</small></p>
-                            <p>A traves del curso he realizado mi primera  aplicación</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Sanatorio La entrerriana</h5>
-                            <p class="mb-2"><strong>Clinica</strong> | <small> 2011-2012 / 2017 Actualmente - Relacion de dependencia</small></p>
-                            <p>Actualmente me encuentro en el servicio de medicina laboral-Puesto Administrativo</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Transporte Boaglio</h5>
-                            <p class="mb-2"><strong>Transporte</strong> | <small> 2012 - Actualmente - Emprendedor</small></p>
-                            <p>Emprendimiento propio de transportes de materiales y movimientos de suelo</p>
-                        </div>
-                        
-                    </div>
-                </div>
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">
+                Instituto de capacitacion empresaria
+              </h5>
+              <p class="mb-2">
+                <strong>Terciario</strong> | <small>2010 - 2013</small>
+              </p>
+              <p>Me recibi con el titulo de administracion de empresas</p>
             </div>
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">Argentina Programa 3.0</h5>
+              <p class="mb-2">
+                <strong>Se programar</strong> |
+                <small>Enero 2022 - Abril 2022</small>
+              </p>
+              <p>Introduccion a la programacion</p>
+            </div>
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">Argentina Programa 3.0</h5>
+              <p class="mb-2">
+                <strong>Yo programo</strong> |
+                <small>Julio 2022 - Enero 2023</small>
+              </p>
+              <p>Desarrollador web full stack Jr</p>
+            </div>
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">
+                Conocimientos avanzados de hardware y office
+              </h5>
+              <p class="mb-2">
+                <strong>Programas especiales</strong> |
+                <small>En constante aprendizaje</small>
+              </p>
+              <p>
+                Manejo de sistema de algoritmo para manejo de datos de
+                pacientes, facturacion y registros
+              </p>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-6">
+          <h3 class="mb-4">Experiencia Laboral</h3>
+          <div class="border-left border-primary pt-2 pl-4 ml-2">
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">Programador web</h5>
+              <p class="mb-2">
+                <strong>Argentina Programa</strong> | <small> Freelance</small>
+              </p>
+              <p>He realizado mi primer portfolio web</p>
+            </div>
+
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">
+                Mi primera aplicación en angular
+              </h5>
+              <p class="mb-2">
+                <strong>Argentina Programa</strong> | <small> Freelance</small>
+              </p>
+              <p>A traves del curso he realizado una aplicacion</p>
+            </div>
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">Sanatorio La entrerriana</h5>
+              <p class="mb-2">
+                <strong>Clinica</strong> |
+                <small>
+                  2011-2012 / 2017 Actualmente - Relacion de dependencia</small
+                >
+              </p>
+              <p>Servicio de medicina laboral-Puesto Administrativo</p>
+            </div>
+            <div class="position-relative ex-me mb-4">
+              <i
+                class="far fa-dot-circle text-primary position-absolute"
+                style="top: 2px; left: -35px; font-size: 22px"
+              ></i>
+              <h5 class="font-weight-bold mb-1">Transporte Boaglio</h5>
+              <p class="mb-2">
+                <strong>Transporte</strong> |
+                <small> 2012 - Actualmente - Empresario</small>
+              </p>
+              <p>
+                Emprendimiento propio de transportes de materiales y movimientos
+                de suelo
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-    <!-- Educacion y experiencia -->
+<!-- Educacion y experiencia -->

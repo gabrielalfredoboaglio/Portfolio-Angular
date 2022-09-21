@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PortfolioService {
+  constructor() {}
 
-  constructor() { }
-
-  obtenerDatos(){
-    console.log("portfolio esta funcionando")
+  obtenerDatos() {
+    console.log('portfolio esta funcionando');
   }
 }

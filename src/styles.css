@@ -1,34 +1,29 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6c757d;
+  text-align: left;
+  background-color: #ffffff;
+}
 
-html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-  
-   
-  
-  body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #6c757d;
-    text-align: left;
-    background-color: #ffffff;
-  }
-   
-  .m-0 {
-    text-align: center;
-  }
-   
-  h1,h2,h3,h4,h5,h6,p{
-    color: #020202 !important;
-  } 
+.m-0 {
+  text-align: center;
+}
 
-  /********** Css para los btn ************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #020202 !important;
+}
 
+/********** Css para los btn ************/
 
 .text-stroke-header {
   -webkit-text-stroke: 3px #ffffff;
@@ -52,5 +47,3 @@ html {
 .form-control {
   border-radius: 25px;
 }
-  
-   
