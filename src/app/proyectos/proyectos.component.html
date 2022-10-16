@@ -14,11 +14,16 @@
         <h1 class="position-absolute text-uppercase text-primary">
           Mis proyectos
         </h1>
+        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button class="btn btn-primary" type="button">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
       </div>
-      <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Editar</button>
-        <button class="btn btn-primary" type="button">Borrar</button>
-      </div>
+
       <div class="row pb-3">
         <div class="service-box col-lg-4 col-md-6 text-center mb-5">
           <div class="d-flex align-items-center justify-content-center mb-4">
@@ -26,6 +31,14 @@
               class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"
             ></i>
             <h4 class="font-weight-bold m-0">1° Proyecto</h4>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </div>
           <p></p>
           <a
@@ -39,6 +52,14 @@
               class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"
             ></i>
             <h4 class="font-weight-bold m-0">2° Proyecto</h4>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </div>
           <p></p>
           <a
@@ -52,6 +73,14 @@
               class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"
             ></i>
             <h4 class="font-weight-bold m-0">3° Proyecto</h4>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </div>
           <p></p>
           <a
@@ -65,6 +94,14 @@
               class="fab fa-2x fa-apple service-icon bg-primary text-white mr-3"
             ></i>
             <h4 class="font-weight-bold m-0">4° Proyecto</h4>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </div>
           <p></p>
           <a
@@ -78,6 +115,14 @@
               class="fa fa-2x fa-search service-icon bg-primary text-white mr-3"
             ></i>
             <h4 class="font-weight-bold m-0">5° Proyecto</h4>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </div>
           <p></p>
           <a
@@ -91,6 +136,14 @@
               class="fa fa-2x fa-edit service-icon bg-primary text-white mr-3"
             ></i>
             <h4 class="font-weight-bold m-0">6° Proyecto</h4>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </div>
           <p></p>
           <a

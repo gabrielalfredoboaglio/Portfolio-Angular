@@ -11,18 +11,6 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7 text-center text-lg-left">
-          <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
-            <div style="text-align: center">
-              <button
-                class="btn btn-primary"
-                style="position: absolute; bottom: 100%"
-                type="button"
-              >
-                Editar
-              </button>
-              <button class="btn btn-primary" type="button">Borrar</button>
-            </div>
-          </div>
           <h3 class="text-white font-weight-normal mb-3">Hola, mi nombre es</h3>
           <h1
             class="display-3 text-uppercase text-primary mb-2"
@@ -33,30 +21,28 @@
 
           <div class="col row">
             <div class="text">Y soy desarrollador full stack Junior.</div>
+            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+              <button class="btn btn-light" type="button">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+            </div>
           </div>
           <div
             class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5"
           >
             <a
-              href="./assets/img/APLogo-20-20.png"
-              download="foto.png"
+              href="./assets/img/DOC-20220925-WA0030.pdf"
+              download="DOC-20220925-WA0030.pdf"
               class="btn btn-white mr-4"
               >Download CV</a
             >
           </div>
         </div>
         <div class="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img">
-          <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
-            <div style="text-align: center">
-              <button
-                class="btn btn-primary"
-                style="position: absolute; top: 500%"
-                type="button"
-              >
-                Editar
-              </button>
-              <button class="btn btn-primary" type="button">Borrar</button>
-            </div>
+          <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+            <button class="btn btn-light" type="button">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
           </div>
           <img
             class="img-fluid w-75 rounded-circle shadow-sm"

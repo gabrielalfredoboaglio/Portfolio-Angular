@@ -2,10 +2,6 @@
 <section>
   <div class="container-fluid py-5" id="about">
     <div class="container">
-      <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Editar</button>
-        <button class="btn btn-primary" type="button">Borrar</button>
-      </div>
       <div
         class="position-relative d-flex align-items-center justify-content-center"
       >
@@ -15,6 +11,14 @@
         >
           Sobre mi
         </h1>
+        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button class="btn btn-primary" type="button">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
         <h1 class="position-absolute text-uppercase text-primary">Sobre mi</h1>
       </div>
       <div class="row align-items-center">

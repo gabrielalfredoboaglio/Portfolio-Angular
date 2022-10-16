@@ -14,11 +14,16 @@
         <h1 class="position-absolute text-uppercase text-primary">
           Educacion & Experiencia
         </h1>
+        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button class="btn btn-primary" type="button">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
       </div>
-      <div *ngIf="usuarioLogueado" class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Editar</button>
-        <button class="btn btn-primary" type="button">Borrar</button>
-      </div>
+
       <div class="row mt-4">
         <div class="col-lg-6">
           <h3 class="mb-4" id="edu">Mi Educacion</h3>
