@@ -14,12 +14,15 @@
         <h1 class="position-absolute text-uppercase text-primary">
           Educacion & Experiencia
         </h1>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
+        <div class="d-grid gap-2 d-md-block">
+          <button
+            class="btn btn-primary"
+            type="button"
+            (click)="onOpenModal('add')"
+            data-bs-toggle="modal"
+            data-bs-target="#addEducationModal"
+          >
             <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
           </button>
         </div>
       </div>
@@ -28,129 +31,69 @@
         <div class="col-lg-6">
           <h3 class="mb-4" id="edu">Mi Educacion</h3>
           <div class="border-left border-primary pt-2 pl-4 ml-2">
-            <div class="position-relative ex-me mb-4">
+            <div
+              class="position-relative ex-me mb-4"
+              *ngFor="let education of educations"
+            >
               <i
                 class="far fa-dot-circle text-primary position-absolute"
                 style="top: 2px; left: -35px; font-size: 22px"
               ></i>
-              <h5 class="font-weight-bold mb-1">Instituto Dr Enrique Carbo</h5>
+
+              <button
+                (click)="onOpenModal('edit', education)"
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#editEducationModal"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button
+                (click)="onOpenModal('delete', education)"
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteEducationModal"
+              >
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <h5 class="font-weight-bold mb-1">{{ education.tituloEdu }}</h5>
               <p class="mb-2">
-                <strong>Secundario</strong> | <small>1995 - 2007</small>
+                <strong>{{ education.imagenEdu }}</strong> |
+                <small>{{ education.fechaEdu }}</small>
               </p>
-              <p>Me recibi con el titulo de bachiller mercantil</p>
-            </div>
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">
-                Instituto de capacitacion empresaria
-              </h5>
-              <p class="mb-2">
-                <strong>Terciario</strong> | <small>2010 - 2013</small>
-              </p>
-              <p>Me recibi con el titulo de administracion de empresas</p>
-            </div>
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">Argentina Programa 3.0</h5>
-              <p class="mb-2">
-                <strong>Se programar</strong> |
-                <small>Enero 2022 - Abril 2022</small>
-              </p>
-              <p>Introduccion a la programacion</p>
-            </div>
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">Argentina Programa 3.0</h5>
-              <p class="mb-2">
-                <strong>Yo programo</strong> |
-                <small>Julio 2022 - Enero 2023</small>
-              </p>
-              <p>Desarrollador web full stack Jr</p>
-            </div>
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">
-                Conocimientos avanzados de hardware y office
-              </h5>
-              <p class="mb-2">
-                <strong>Programas especiales</strong> |
-                <small>En constante aprendizaje</small>
-              </p>
-              <p>
-                Manejo de sistema de algoritmo para manejo de datos de
-                pacientes, facturacion y registros
-              </p>
+              <p>{{ education.descEdu }}</p>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <h3 class="mb-4">Experiencia Laboral</h3>
           <div class="border-left border-primary pt-2 pl-4 ml-2">
-            <div class="position-relative ex-me mb-4">
+            <div
+              class="position-relative ex-me mb-4"
+              *ngFor="let experiencia of experiencias"
+            >
               <i
                 class="far fa-dot-circle text-primary position-absolute"
                 style="top: 2px; left: -35px; font-size: 22px"
               ></i>
-              <h5 class="font-weight-bold mb-1">Programador web</h5>
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="onOpenModal('add')"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-primary" type="button">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <h5 class="font-weight-bold mb-1">{{ experiencia.tituloExp }}</h5>
               <p class="mb-2">
-                <strong>Argentina Programa</strong> | <small> Freelance</small>
+                <strong>{{ experiencia.imagenExp }}</strong> |
+                <small> {{ experiencia.fechaExp }}</small>
               </p>
-              <p>He realizado mi primer portfolio web</p>
-            </div>
-
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">
-                Mi primera aplicación en angular
-              </h5>
-              <p class="mb-2">
-                <strong>Argentina Programa</strong> | <small> Freelance</small>
-              </p>
-              <p>A traves del curso he realizado una aplicacion</p>
-            </div>
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">Sanatorio La entrerriana</h5>
-              <p class="mb-2">
-                <strong>Clinica</strong> |
-                <small>
-                  2011-2012 / 2017 Actualmente - Relacion de dependencia</small
-                >
-              </p>
-              <p>Servicio de medicina laboral-Puesto Administrativo</p>
-            </div>
-            <div class="position-relative ex-me mb-4">
-              <i
-                class="far fa-dot-circle text-primary position-absolute"
-                style="top: 2px; left: -35px; font-size: 22px"
-              ></i>
-              <h5 class="font-weight-bold mb-1">Transporte Boaglio</h5>
-              <p class="mb-2">
-                <strong>Transporte</strong> |
-                <small> 2012 - Actualmente - Empresario</small>
-              </p>
-              <p>
-                Emprendimiento propio de transportes de materiales y movimientos
-                de suelo
-              </p>
+              <p>{{ experiencia.descExp }}</p>
             </div>
           </div>
         </div>
@@ -159,3 +102,280 @@
   </div>
 </section>
 <!-- Educacion y experiencia -->
+
+<!-- Añadir modal -->
+
+<div
+  class="modal fade"
+  id="addEducationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addEducationModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addEducationModalLabel">
+          Añadir Educacion
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          data-bs-toggle="modal"
+          data-bs-target="#addEducationModal"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddEducation(addForm)">
+          <div class="form-group">
+            <label for="tituloEdu">Titulo</label>
+            <input
+              type="text"
+              ngModel
+              name="tituloEdu"
+              class="form-control"
+              id="tituloEdu"
+              placeholder="Titulo"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="fechaEdu">Año Final de Estudios</label>
+            <input
+              type="text"
+              ngModel
+              name="fechaEdu"
+              class="form-control"
+              id="fechaEdu"
+              placeholder="Año"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="descEdu">Descripcion</label>
+            <input
+              type="text"
+              ngModel
+              name="descEdu"
+              class="form-control"
+              id="descEdu"
+              placeholder="Descripcion"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="imagenEdu">Profesion</label>
+            <input
+              type="text"
+              ngModel
+              name="imagenEdu"
+              class="form-control"
+              id="imagenEdu"
+              placeholder="Profesion"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="add-education-form"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              data-bs-toggle="modal"
+              data-bs-target="#addEducationModal"
+            >
+              Cerrar
+            </button>
+            <button
+              [disabled]="addForm.invalid"
+              type="submit"
+              class="btn btn-prymary"
+              data-bs-toggle="modal"
+              data-bs-target="#addEducationModal"
+            >
+              Añadir cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Edit modal-->
+<div
+  class="modal fade"
+  id="editEducationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addEducationEditModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateEducationModalLabel">
+          Editar Educacion {{ editEducation?.tituloEdu }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          data-bs-toggle="modal"
+          data-bs-target="#updateEducationModal"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm">
+          <div class="form-group">
+            <label for="tituloEdu">Titulo</label>
+            <input
+              type="text"
+              ngModel="{{ editEducation?.tituloEdu }}"
+              name="tituloEdu"
+              class="form-control"
+              id="tituloEdu"
+              aria-describedby="emailHelp"
+              placeholder="Titulo"
+            />
+          </div>
+          <input
+            type="hidden"
+            ngModel="{{ editEducation?.idEdu }}"
+            name="idEdu"
+            class="form-control"
+            id="idEdu"
+            placeholder=""
+          />
+          <div class="form-group">
+            <label for="descEdu">Descripcion Educacion</label>
+            <input
+              type="text"
+              ngModel="{{ editEducation?.descEdu }}"
+              name="descEdu"
+              class="form-control"
+              id="descEdu"
+              placeholder="Descripcion"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Fecha De fin de estudios</label>
+            <input
+              type="text"
+              ngModel="{{ editEducation?.fechaEdu }}"
+              name="fechaEdu"
+              class="form-control"
+              id="fechaEdu"
+              placeholder="Job title"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="imagenEdu">Profesion</label>
+            <input
+              type="text"
+              ngModel="{{ editEducation?.imagenEdu }}"
+              name="imagenEdu"
+              class="form-control"
+              id="imagenEdu"
+              placeholder="profesion"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              id=""
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              data-bs-toggle="modal"
+              data-bs-target="#cerrarEducationModal"
+            >
+              Cerrar
+            </button>
+            <button
+              (click)="onUpdateEducation(addForm.value)"
+              data-dismiss="modal"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#editEducationModal"
+            >
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal-->
+
+<div
+  class="modal fade"
+  id="deleteEducationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="deleteModelLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModelLabel">Borrar Educacion</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          data-bs-toggle="modal"
+          data-bs-target="#cerrarEducationModal"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Estas seguro de borrar la educacion
+
+          {{ deleteEducation?.tituloEdu }}?
+        </p>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            data-bs-toggle="modal"
+            data-bs-target="#cerrarEducationModal"
+          >
+            No
+          </button>
+          <button
+            (click)="onDeleteEducation(deleteEducation!.idEdu)"
+            class="btn btn-danger"
+            data-dismiss="modal"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteEducationModal"
+          >
+            Si
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notificacion cuando no hay educaciones-->
+<div *ngIf="educations?.length == 0" class="col-lg-12 col md-12 col-x1-12">
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">No hay Educaciones!</h4>
+    <p>Educaciones no encontradas</p>
+  </div>
+</div>

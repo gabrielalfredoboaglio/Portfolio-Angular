@@ -13,15 +13,16 @@
         <div class="col-lg-7 text-center text-lg-left">
           <h3 class="text-white font-weight-normal mb-3">Hola, mi nombre es</h3>
           <h1
+            *ngIf="usuario"
             class="display-3 text-uppercase text-primary mb-2"
             style="-webkit-text-stroke: 4px #ffffff"
           >
-            Gabriel Boaglio
+            {{ usuario.nombre }}
           </h1>
 
-          <div class="col row">
-            <div class="text">Y soy desarrollador full stack Junior.</div>
-            <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+          <div class="col row" *ngIf="usuario">
+            <div class="text">{{ usuario.descripcion }}</div>
+            <div class="d-grid gap-2 d-md-block">
               <button class="btn btn-light" type="button">
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
@@ -39,7 +40,7 @@
           </div>
         </div>
         <div class="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img">
-          <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
+          <div class="d-grid gap-2 d-md-block">
             <button class="btn btn-light" type="button">
               <i class="fa-solid fa-pen-to-square"></i>
             </button>

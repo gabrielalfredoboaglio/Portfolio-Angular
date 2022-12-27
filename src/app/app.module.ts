@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './modals/login/login.component';
 import { HeaderComponent } from './header/header.component';
-import { MIperfilComponent } from './miperfil/miperfil.component';
+import { MiperfilComponent } from './miperfil/miperfil.component';
 import { MiexperienciaComponent } from './miexperiencia/miexperiencia.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
@@ -15,8 +15,8 @@ import { ErrorComponent } from './error/error.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ContactoComponent } from './contacto/contacto.component';
 import { IndexComponent } from './index/index.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { IndexComponent } from './index/index.component';
     NavbarComponent,
     LoginComponent,
     HeaderComponent,
-    MIperfilComponent,
+    MiperfilComponent,
     MiexperienciaComponent,
     SkillsComponent,
     ProyectosComponent,
@@ -32,15 +32,15 @@ import { IndexComponent } from './index/index.component';
     ErrorComponent,
     ContactoComponent,
     IndexComponent,
- 
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
