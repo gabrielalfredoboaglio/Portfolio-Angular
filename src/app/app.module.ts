@@ -13,7 +13,7 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { ContactoComponent } from './contacto/contacto.component';
+
 import { IndexComponent } from './index/index.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -30,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     ProyectosComponent,
     FooterComponent,
     ErrorComponent,
-    ContactoComponent,
+
     IndexComponent,
   ],
   imports: [

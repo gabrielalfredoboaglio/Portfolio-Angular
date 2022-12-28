@@ -21,7 +21,7 @@ export class EducationService {
     );
   }
   public updateEducation(education: Education): Observable<Education> {
-    return this.http.post<Education>(
+    return this.http.put<Education>(
       `${this.apiServerUrl}/educacion/update`,
       education
     );
