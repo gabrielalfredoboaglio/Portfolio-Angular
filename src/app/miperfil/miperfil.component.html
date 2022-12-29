@@ -29,53 +29,36 @@
             alt=""
           />
         </div>
-        <div class="col-lg-7">
-          <h3 class="mb-4">Desarrollador Web Full Stack Junior</h3>
-          <p>
-            Soy un desarrollador Full stack junior con pasión por el desarrollo
-            de responsive web apps. Mi compromiso es siempre crear experiencias
-            de usuario memorables a través del diseño.
-          </p>
+        <div class="col-lg-7" *ngIf="usuario">
+          <h3 class="mb-4">{{ usuario.titulo }}</h3>
+          <p>{{ usuario.descripcion }}</p>
           <div class="row mb-3">
             <div class="col-sm-6 py-2">
               <h6>
                 Nombre:
-                <span class="text-secondary">Gabriel Alfredo</span>
-              </h6>
-            </div>
-            <div class="col-sm-6 py-2">
-              <h6>
-                Fecha de nacimiento:
-                <span class="text-secondary">3 Abril 1990</span>
-              </h6>
-            </div>
-            <div class="col-sm-6 py-2">
-              <h6>
-                Profesion: <span class="text-secondary">Progamador junior</span>
-              </h6>
-            </div>
-            <div class="col-sm-6 py-2">
-              <h6>Experiencia: <span class="text-secondary">-</span></h6>
-            </div>
-            <div class="col-sm-6 py-2">
-              <h6>Telefono: <span class="text-secondary">3436227434</span></h6>
-            </div>
-            <div class="col-sm-6 py-2">
-              <h6>
-                Email:
                 <span class="text-secondary"
-                  >gabrielalfredoboaglio@gmail.com</span
+                  >{{ usuario.nombre }} {{ usuario.apellido }}</span
                 >
               </h6>
             </div>
             <div class="col-sm-6 py-2">
               <h6>
-                Direccion:
-                <span class="text-secondary">Gregoria Perez 1770</span>
+                Fecha de nacimiento:
+                <span class="text-secondary">{{ usuario.fechaNac }}</span>
               </h6>
             </div>
             <div class="col-sm-6 py-2">
-              <h6>Freelance: <span class="text-secondary">Disponible</span></h6>
+              <h6>
+                Profesion:
+                <span class="text-secondary">{{ usuario.titulo }}</span>
+              </h6>
+            </div>
+
+            <div class="col-sm-6 py-2">
+              <h6>
+                Email:
+                <span class="text-secondary">{{ usuario.email }}</span>
+              </h6>
             </div>
           </div>
         </div>
