@@ -10,7 +10,7 @@ import { HeaderService } from '../servicios/header.service';
 })
 export class HeaderComponent implements OnInit {
   public usuario: Usuario | undefined;
-
+  public editUsuario: Usuario | undefined;
   constructor(private headerService: HeaderService) {}
   ngOnInit(): void {
     this.getUser();
@@ -23,6 +23,30 @@ export class HeaderComponent implements OnInit {
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
+      },
+    });
+  }
+  public onOpenModal(mode: string, usuario?: Usuario): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+
+    button.setAttribute('data-target', '#editUsuarioModal');
+
+    container?.appendChild(button);
+    button.click();
+  }
+  public onUpdateUsuario(usuario: Usuario): void {
+    this.editUsuario = usuario;
+    this.headerService.updateUsuario(usuario).subscribe({
+      next: (response: Usuario) => {
+        console.log(response);
+        this.getUser();
+      },
+      error: (error: HttpErrorResponse) => {
+        console.log('error');
       },
     });
   }
