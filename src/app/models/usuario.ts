@@ -8,4 +8,7 @@ export interface Usuario {
   email: string;
   localidad: string;
   fechaNac: string;
+  fotoHeader: string;
+  profesionHeader: string;
+  nombreHeader: string;
 }

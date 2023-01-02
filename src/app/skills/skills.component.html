@@ -11,23 +11,31 @@
       >
         Skills
       </h1>
-      <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-        <button class="btn btn-primary" type="button">
+      <div class="d-grid gap-2 d-md-block">
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="onOpenModal('add')"
+          data-bs-toggle="modal"
+          data-bs-target="#addSkillModal"
+        >
           <i class="fa-solid fa-pen-to-square"></i>
-        </button>
-        <button class="btn btn-primary" type="button">
-          <i class="fa-solid fa-trash"></i>
         </button>
       </div>
       <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
     </div>
 
-    <div class="row" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+    <div
+      class="row"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+      *ngFor="let skill of skills"
+    >
       <div class="text-center col-sm-4 col-md-4 col-lg-4">
         <circle-progress
-          [percent]="100"
+          [percent]="skill.percent"
           [radius]="100"
-          [title]="'HTML 100'"
+          [title]="skill.skillName"
           [titleFontWeight]="'1000'"
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="8"
@@ -35,136 +43,82 @@
           [innerStrokeColor]="'orange'"
           [animation]="true"
           [animationDuration]="1500"
-          [startFromZero]="true"
+          [showUnits]="true"
+          [showSubtitle]="true"
         >
         </circle-progress>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </div>
-      <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="85"
-          [radius]="100"
-          [title]="'ANGULAR 85'"
-          [titleFontWeight]="'1000'"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'blue'"
-          [innerStrokeColor]="'orange'"
-          [animation]="true"
-          [animationDuration]="1500"
-          [startFromZero]="true"
-        >
-        </circle-progress>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </div>
-      <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="55"
-          [radius]="100"
-          [title]="'JAVASCRIPT 55'"
-          [titleFontWeight]="'1000'"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'blue'"
-          [innerStrokeColor]="'orange'"
-          [animation]="true"
-          [startFromZero]="true"
-        >
-        </circle-progress>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </div>
-      <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="85"
-          [radius]="100"
-          [title]="'CSS 85'"
-          [titleFontWeight]="'1000'"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'blue'"
-          [innerStrokeColor]="'orange'"
-          [animation]="true"
-          [startFromZero]="true"
-        >
-        </circle-progress>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </div>
-      <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="69"
-          [radius]="100"
-          [title]="'INGLES 69'"
-          [titleFontWeight]="'1000'"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'blue'"
-          [innerStrokeColor]="'orange'"
-          [animation]="true"
-          [animationDuration]="1500"
-          [startFromZero]="true"
-        >
-        </circle-progress>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </div>
-      <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="100"
-          [radius]="100"
-          [title]="'TEAMWORK 100'"
-          [titleFontWeight]="'1000'"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'blue'"
-          [innerStrokeColor]="'orange'"
-          [animation]="true"
-          [animationDuration]="1500"
-        >
-        </circle-progress>
-        <div *ngIf="usuarioLogueado" class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="btn btn-primary" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
       </div>
     </div>
     <!-- Skills end -->
+  </div>
+</div>
+<!-- Add Skill Modal -->
+<div
+  class="modal fade"
+  id="addSkillModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addSkillModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addSkillModalLabel">Agregar Skill</h5>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddSkill(addForm)">
+          <div class="form-group">
+            <label for="skillName">Skill</label>
+            <input
+              type="text"
+              ngModel
+              name="skillName"
+              class="form-control"
+              id="skillName"
+              placeholder="Nombre Skill con porcentaje"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="percent">Porcentaje</label>
+            <input
+              type="number"
+              min="0"
+              max="100"
+              step="5"
+              ngModel
+              name="percent"
+              class="form-control"
+              id="percent"
+              placeholder="Total"
+              required
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="cerrar-skill-form"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              data-bs-toggle="modal"
+              data-bs-target="#cerrarSkillModal"
+            >
+              Cerrar
+            </button>
+            <button
+              [disabled]="addForm.invalid"
+              type="submit"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addSkillModal"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
