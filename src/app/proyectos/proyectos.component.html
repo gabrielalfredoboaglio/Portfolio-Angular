@@ -83,7 +83,7 @@
               <div class="modal-body">
                 <form #addForm="ngForm" (ngSubmit)="onAddProject(addForm)">
                   <div class="form-group">
-                    <label for="titlePro">Titulo</label>
+                    <label for="titlePro">Titulo Proyecto</label>
                     <input
                       type="text"
                       ngModel
@@ -91,18 +91,6 @@
                       class="form-control"
                       id="titlePro"
                       placeholder="Titulo"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="linkPro">Link al proyecto</label>
-                    <input
-                      type="text"
-                      ngModel
-                      name="linkPro"
-                      class="form-control"
-                      id="linkPro"
-                      placeholder="link"
                       required
                     />
                   </div>
@@ -119,7 +107,30 @@
                       required
                     />
                   </div>
-
+                  <div class="form-group">
+                    <label for="linkPro">Link al proyecto</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="linkPro"
+                      class="form-control"
+                      id="linkPro"
+                      placeholder="link"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="picPro">Imagen</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="picPro"
+                      class="form-control"
+                      id="descPro"
+                      placeholder="Imagen"
+                      required
+                    />
+                  </div>
                   <div class="modal-footer">
                     <button
                       type="button"
@@ -205,6 +216,18 @@
                       class="form-control"
                       id="linkPro1"
                       placeholder="Fecha Inicio"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="picPro">Imagen</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="picPro"
+                      class="form-control"
+                      id="picPro"
+                      placeholder="Imagen"
+                      required
                     />
                   </div>
 
