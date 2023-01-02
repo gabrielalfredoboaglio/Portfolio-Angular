@@ -120,18 +120,6 @@
                     />
                   </div>
 
-                  <div class="form-group">
-                    <label for="picPro">URL de la imagen</label>
-                    <input
-                      type="text"
-                      ngModel
-                      name="picPro"
-                      class="form-control"
-                      id=" picPro"
-                      placeholder="URL de la imagen"
-                      required
-                    />
-                  </div>
                   <div class="modal-footer">
                     <button
                       type="button"
@@ -220,17 +208,6 @@
                     />
                   </div>
 
-                  <div class="form-group">
-                    <label for="picExp">URL de la imagen</label>
-                    <input
-                      type="text"
-                      ngModel="{{ editProject?.picPro }}"
-                      name="picPro"
-                      class="form-control"
-                      id="picPro1"
-                      placeholder="URL de la imagen"
-                    />
-                  </div>
                   <div class="modal-footer">
                     <button
                       type="button"
@@ -307,3 +284,21 @@
     </div>
   </div>
 </section>
+
+<!-- Notification for no projects -->
+<div *ngIf="projects?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">No hay Proyectos!</h4>
+    <p>No se encontraron proyectos.</p>
+  </div>
+</div>
+
+<!-- Notification for no data -->
+<div
+  *ngIf="projects?.length == 0"
+  class="col-lg-12 col-md-12 col-xl-12 spinner"
+>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>

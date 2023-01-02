@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../models/usuario';
-import { HeaderService } from '../servicios/header.service';
+import { Header } from '../models/header';
+import { InfoService } from '../servicios/info.service';
 
 @Component({
   selector: 'app-header',
@@ -9,41 +9,45 @@ import { HeaderService } from '../servicios/header.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  public usuario: Usuario | undefined;
-  public editUsuario: Usuario | undefined;
-  constructor(private headerService: HeaderService) {}
+  public header: Header | undefined;
+  public editHeader: Header | undefined;
+  constructor(private infoService: InfoService) {}
+
   ngOnInit(): void {
-    this.getUser();
+    this.getInfo();
   }
 
-  public getUser(): void {
-    this.headerService.getUser().subscribe({
-      next: (response: Usuario) => {
-        this.usuario = response;
+  public getInfo(): void {
+    this.infoService.getInfo().subscribe({
+      next: (response: Header) => {
+        this.header = response;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
       },
     });
   }
-  public onOpenModal(mode: string, usuario?: Usuario): void {
+
+  //Modal Header
+  public onOpenModal(mode: string, header?: Header): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
 
-    button.setAttribute('data-target', '#editUsuarioModal');
+    button.setAttribute('data-target', '#editHeaderUsuarioModal');
 
     container?.appendChild(button);
     button.click();
   }
-  public onUpdateUsuario(usuario: Usuario): void {
-    this.editUsuario = usuario;
-    this.headerService.updateUsuario(usuario).subscribe({
-      next: (response: Usuario) => {
+
+  public onUpdateHeader(header: Header): void {
+    this.editHeader = header;
+    this.infoService.updateInfo(header).subscribe({
+      next: (response: Header) => {
         console.log(response);
-        this.getUser();
+        this.getInfo();
       },
       error: (error: HttpErrorResponse) => {
         console.log('error');
