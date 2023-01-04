@@ -4,25 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './modals/login/login.component';
+
 import { HeaderComponent } from './header/header.component';
-import { MiperfilComponent } from './miperfil/miperfil.component';
+
 import { MiexperienciaComponent } from './miexperiencia/miexperiencia.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-
+import { MiperfilComponent } from './miperfil/miperfil.component';
 import { IndexComponent } from './index/index.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent,
+
     HeaderComponent,
     MiperfilComponent,
     MiexperienciaComponent,
@@ -32,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     ErrorComponent,
 
     IndexComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,13 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
