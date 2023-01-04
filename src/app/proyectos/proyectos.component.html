@@ -13,6 +13,7 @@
         <h1 class="position-absolute text-uppercase text-primary">
           Mis proyectos
         </h1>
+
         <div class="d-grid gap-2 d-md-block">
           <button
             (click)="onOpenModal('add')"
@@ -126,7 +127,7 @@
                       ngModel
                       name="picPro"
                       class="form-control"
-                      id="descPro"
+                      id="picPro"
                       placeholder="Imagen"
                       required
                     />
@@ -184,14 +185,14 @@
                       name="titlePro"
                       class="form-control"
                       id="titlePro1"
-                      aria-describedby="emailHelp"
+                      aria-describedby="nombre"
                       placeholder="Titulo"
                     />
                   </div>
                   <input
                     type="hidden"
                     ngModel="{{ editProject?.idPro }}"
-                    name="idPro"
+                    name="idPro1"
                     class="form-control"
                     id="idPro1"
                     placeholder=""
@@ -201,7 +202,7 @@
                     <input
                       type="text"
                       ngModel="{{ editProject?.descPro }}"
-                      name="descPro"
+                      name="descPro1"
                       class="form-control"
                       id="descPro1"
                       placeholder="descripción"
@@ -212,7 +213,7 @@
                     <input
                       type="text"
                       ngModel="{{ editProject?.linkPro }}"
-                      name="linkPro"
+                      name="linkPro1"
                       class="form-control"
                       id="linkPro1"
                       placeholder="Fecha Inicio"
@@ -223,9 +224,9 @@
                     <input
                       type="text"
                       ngModel
-                      name="picPro"
+                      name="picPro1"
                       class="form-control"
-                      id="picPro"
+                      id="picPro1"
                       placeholder="Imagen"
                       required
                     />
@@ -238,7 +239,7 @@
                       data-dismiss="modal"
                       class="btn btn-secondary"
                       data-bs-toggle="modal"
-                      data-bs-target="#cerrarSkillModal"
+                      data-bs-target="#cerrarProjectModal"
                     >
                       Cerrar
                     </button>
