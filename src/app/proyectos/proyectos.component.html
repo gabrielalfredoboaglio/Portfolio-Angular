@@ -27,6 +27,98 @@
         </div>
       </div>
 
+      <!--Add project modal -->
+      <div
+        class="modal fade"
+        id="addProjectModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addProjectModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addProjectModalLabel">
+                Agregar Proyecto
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form #addForm="ngForm" (ngSubmit)="onAddProject(addForm)">
+                <div class="form-group">
+                  <label for="titlePro">Titulo Proyecto</label>
+                  <input
+                    type="text"
+                    ngModel
+                    name="titlePro"
+                    class="form-control"
+                    id="titlePro"
+                    placeholder="Titulo"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="descPro">Descripción Proyecto</label>
+                  <input
+                    type="text"
+                    ngModel
+                    name="descPro"
+                    class="form-control"
+                    id="descPro"
+                    placeholder="Descripción"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="linkPro">Link al proyecto</label>
+                  <input
+                    type="text"
+                    ngModel
+                    name="linkPro"
+                    class="form-control"
+                    id="linkPro"
+                    placeholder="link"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="picPro">Imagen</label>
+                  <input
+                    type="text"
+                    ngModel
+                    name="picPro"
+                    class="form-control"
+                    id="picPro"
+                    placeholder="Imagen"
+                    required
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    id="add-project-form"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cerrarProjectModal"
+                  >
+                    Cerrar
+                  </button>
+                  <button
+                    [disabled]="addForm.invalid"
+                    type="submit"
+                    class="btn btn-primary"
+                  >
+                    Guardar Cambios
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row pb-3" *ngFor="let project of projects">
         <div class="service-box col-lg-4 col-md-6 text-center mb-5">
           <div class="d-grid gap-2 d-md-block">
@@ -64,101 +156,6 @@
           ></a>
           <p>{{ project.linkPro }}</p>
         </div>
-        <!-- Add Project Modal -->
-
-        <div
-          class="modal fade"
-          id="addProjectModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="addProjectModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="addProjectModalLabel">
-                  Agregar Proyecto
-                </h5>
-              </div>
-              <div class="modal-body">
-                <form #addForm="ngForm" (ngSubmit)="onAddProject(addForm)">
-                  <div class="form-group">
-                    <label for="titlePro">Titulo Proyecto</label>
-                    <input
-                      type="text"
-                      ngModel
-                      name="titlePro"
-                      class="form-control"
-                      id="titlePro"
-                      placeholder="Titulo"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="descPro">Descripción Proyecto</label>
-                    <input
-                      type="text"
-                      ngModel
-                      name="descPro"
-                      class="form-control"
-                      id="descPro"
-                      placeholder="Descripción"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="linkPro">Link al proyecto</label>
-                    <input
-                      type="text"
-                      ngModel
-                      name="linkPro"
-                      class="form-control"
-                      id="linkPro"
-                      placeholder="link"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="picPro">Imagen</label>
-                    <input
-                      type="text"
-                      ngModel
-                      name="picPro"
-                      class="form-control"
-                      id="picPro"
-                      placeholder="Imagen"
-                      required
-                    />
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      id="add-project-form"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                      data-bs-toggle="modal"
-                      data-bs-target="#cerrarProjectModal"
-                    >
-                      Cerrar
-                    </button>
-                    <button
-                      [disabled]="addForm.invalid"
-                      type="submit"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addProjectModal"
-                    >
-                      Guardar Cambios
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <!-- Edit project modal -->
         <div
           class="modal fade"
@@ -171,7 +168,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="updateProjectModalLabel">
+                <h5 class="modal-title" id="editProjectModalLabel">
                   Editar Proyecto {{ editProject?.titlePro }}
                 </h5>
               </div>
@@ -184,7 +181,7 @@
                       ngModel="{{ editProject?.titlePro }}"
                       name="titlePro"
                       class="form-control"
-                      id="titlePro1"
+                      id="titlePro"
                       aria-describedby="nombre"
                       placeholder="Titulo"
                     />
@@ -192,9 +189,9 @@
                   <input
                     type="hidden"
                     ngModel="{{ editProject?.idPro }}"
-                    name="idPro1"
+                    name="idPro"
                     class="form-control"
-                    id="idPro1"
+                    id="idPro"
                     placeholder=""
                   />
                   <div class="form-group">
@@ -202,9 +199,9 @@
                     <input
                       type="text"
                       ngModel="{{ editProject?.descPro }}"
-                      name="descPro1"
+                      name="descPro"
                       class="form-control"
-                      id="descPro1"
+                      id="descPro"
                       placeholder="descripción"
                     />
                   </div>
@@ -213,9 +210,9 @@
                     <input
                       type="text"
                       ngModel="{{ editProject?.linkPro }}"
-                      name="linkPro1"
+                      name="linkPro"
                       class="form-control"
-                      id="linkPro1"
+                      id="linkPro"
                       placeholder="Fecha Inicio"
                     />
                   </div>
@@ -224,9 +221,9 @@
                     <input
                       type="text"
                       ngModel
-                      name="picPro1"
+                      name="picPro"
                       class="form-control"
-                      id="picPro1"
+                      id="picPro"
                       placeholder="Imagen"
                       required
                     />

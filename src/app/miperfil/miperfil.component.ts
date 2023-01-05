@@ -13,6 +13,7 @@ export class MiperfilComponent implements OnInit {
   public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
   constructor(private headerService: HeaderService) {}
+
   ngOnInit(): void {
     this.getUser();
   }

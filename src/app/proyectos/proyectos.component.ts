@@ -32,10 +32,12 @@ export class ProyectosComponent implements OnInit {
   }
   public onOpenModal(mode: string, project?: Project): void {
     const container = document.getElementById('main-container');
+
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
+
     if (mode === 'add') {
       button.setAttribute('data-target', '#addProjectModal');
     } else if (mode === 'delete') {
