@@ -8,7 +8,7 @@ import { Project } from '../models/project';
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = 'https://porfoliobackrenderarg.onrender.com/';
 
   constructor(private http: HttpClient) {}
 

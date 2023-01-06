@@ -8,7 +8,7 @@ import { Header } from '../models/header';
   providedIn: 'root',
 })
 export class InfoService {
-  private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = 'https://porfoliobackrenderarg.onrender.com/';
   constructor(private http: HttpClient) {}
 
   public getInfo(): Observable<Header> {
