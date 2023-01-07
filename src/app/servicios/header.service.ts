@@ -8,16 +8,16 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root',
 })
 export class HeaderService {
-  private apiServerUrl = 'https://porfoliobackrenderarg.onrender.com/';
+  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
   constructor(private http: HttpClient) {}
 
   public getUser(): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
+    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/api/id/1`);
   }
 
   public updateUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(
-      `${this.apiServerUrl}/usuario/update`,
+      `${this.apiServerUrl}/usuario/api/update`,
       usuario
     );
   }

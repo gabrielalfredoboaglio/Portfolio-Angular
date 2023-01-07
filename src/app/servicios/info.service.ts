@@ -8,14 +8,17 @@ import { Header } from '../models/header';
   providedIn: 'root',
 })
 export class InfoService {
-  private apiServerUrl = 'https://porfoliobackrenderarg.onrender.com/';
+  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
   constructor(private http: HttpClient) {}
 
   public getInfo(): Observable<Header> {
-    return this.http.get<Header>(`${this.apiServerUrl}/header/id/1`);
+    return this.http.get<Header>(`${this.apiServerUrl}/header/api/id/1`);
   }
 
   public updateInfo(header: Header): Observable<Header> {
-    return this.http.put<Header>(`${this.apiServerUrl}/header/update`, header);
+    return this.http.put<Header>(
+      `${this.apiServerUrl}/header/api/update`,
+      header
+    );
   }
 }
