@@ -12,23 +12,25 @@ export class ExperienciaService {
   constructor(private http: HttpClient) {}
 
   public getExperiencia(): Observable<Experiencia[]> {
-    return this.http.get<Experiencia[]>(`${this.apiServerUrl}/experiencia/all`);
+    return this.http.get<Experiencia[]>(
+      `${this.apiServerUrl}/api/experiencia/all`
+    );
   }
   public addExperiencia(experiencia: Experiencia): Observable<Experiencia> {
     return this.http.post<Experiencia>(
-      `${this.apiServerUrl}/experiencia/add`,
+      `${this.apiServerUrl}/api/experiencia/add`,
       experiencia
     );
   }
   public updateExperiencia(experiencia: Experiencia): Observable<Experiencia> {
     return this.http.put<Experiencia>(
-      `${this.apiServerUrl}/experiencia/update`,
+      `${this.apiServerUrl}/api/experiencia/update`,
       experiencia
     );
   }
   public deleteExperiencia(experienciaId: number): Observable<void> {
     return this.http.delete<void>(
-      `${this.apiServerUrl}/experiencia/delete/${experienciaId}`
+      `${this.apiServerUrl}/api/experiencia/delete/${experienciaId}`
     );
   }
 }

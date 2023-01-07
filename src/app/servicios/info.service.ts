@@ -12,10 +12,13 @@ export class InfoService {
   constructor(private http: HttpClient) {}
 
   public getInfo(): Observable<Header> {
-    return this.http.get<Header>(`${this.apiServerUrl}/header/id/1`);
+    return this.http.get<Header>(`${this.apiServerUrl}/api/header/id/1`);
   }
 
   public updateInfo(header: Header): Observable<Header> {
-    return this.http.put<Header>(`${this.apiServerUrl}/header/update`, header);
+    return this.http.put<Header>(
+      `${this.apiServerUrl}/api/header/update`,
+      header
+    );
   }
 }

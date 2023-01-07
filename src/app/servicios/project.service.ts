@@ -13,15 +13,17 @@ export class ProjectService {
   constructor(private http: HttpClient) {}
 
   public getProject(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.apiServerUrl}/project`);
+    return this.http.get<Project[]>(`${this.apiServerUrl}/api/project`);
   }
   public addProject(project: Project): Observable<Project> {
-    return this.http.post<Project>(`${this.apiServerUrl}/project`, project);
+    return this.http.post<Project>(`${this.apiServerUrl}/api/project`, project);
   }
   public updateProject(project: Project): Observable<Project> {
-    return this.http.put<Project>(`${this.apiServerUrl}/project`, project);
+    return this.http.put<Project>(`${this.apiServerUrl}/api/project`, project);
   }
   public deleteProject(projectId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/project/${projectId}`);
+    return this.http.delete<void>(
+      `${this.apiServerUrl}/api/project/${projectId}`
+    );
   }
 }

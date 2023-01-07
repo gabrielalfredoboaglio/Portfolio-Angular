@@ -12,12 +12,12 @@ export class HeaderService {
   constructor(private http: HttpClient) {}
 
   public getUser(): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
+    return this.http.get<Usuario>(`${this.apiServerUrl}/api/usuario/id/1`);
   }
 
   public updateUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(
-      `${this.apiServerUrl}/usuario/update`,
+      `${this.apiServerUrl}/api/usuario/update`,
       usuario
     );
   }

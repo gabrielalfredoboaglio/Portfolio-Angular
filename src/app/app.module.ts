@@ -17,8 +17,6 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import { IndexComponent } from './index/index.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +32,6 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     ErrorComponent,
 
     IndexComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,13 +40,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

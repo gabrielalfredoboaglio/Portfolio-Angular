@@ -12,11 +12,11 @@ export class EducationService {
   constructor(private http: HttpClient) {}
 
   public getEducation(): Observable<Education[]> {
-    return this.http.get<Education[]>(`${this.apiServerUrl}/educacion/all`);
+    return this.http.get<Education[]>(`${this.apiServerUrl}/api/educacion/all`);
   }
   public addEducation(education: Education): Observable<Education> {
     return this.http.post<Education>(
-      `${this.apiServerUrl}/educacion/add`,
+      `${this.apiServerUrl}/api/educacion/add`,
       education
     );
   }
