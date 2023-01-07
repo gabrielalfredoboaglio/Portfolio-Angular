@@ -17,7 +17,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import { IndexComponent } from './index/index.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+
 import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
@@ -34,7 +34,6 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     ErrorComponent,
 
     IndexComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,

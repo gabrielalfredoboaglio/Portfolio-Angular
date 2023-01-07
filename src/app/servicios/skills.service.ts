@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 import { Skill } from '../models/skill';
 
@@ -9,21 +8,21 @@ import { Skill } from '../models/skill';
   providedIn: 'root',
 })
 export class SkillsService {
-  private apiServerUrl = '*';
+  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
 
   constructor(private http: HttpClient) {}
 
   public getSkill(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${this.apiServerUrl}/skill`);
+    return this.http.get<Skill[]>(`${this.apiServerUrl}/api/skill`);
   }
   public addSkill(skill: Skill): Observable<Skill> {
-    return this.http.post<Skill>(`${this.apiServerUrl}/skill`, skill);
+    return this.http.post<Skill>(`${this.apiServerUrl}/api/skill`, skill);
   }
 
   public updateSkill(skill: Skill): Observable<Skill> {
-    return this.http.put<Skill>(`${this.apiServerUrl}/skill`, skill);
+    return this.http.put<Skill>(`${this.apiServerUrl}/api/skill`, skill);
   }
   public deleteSkill(skillId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/skill/${skillId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/skill/${skillId}`);
   }
 }
