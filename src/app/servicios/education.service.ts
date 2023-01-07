@@ -12,6 +12,7 @@ export class EducationService {
   constructor(private http: HttpClient) {}
 
   public getEducation(): Observable<Education[]> {
+<<<<<<< HEAD
     return this.http.get<Education[]>(
       `${this.apiServerUrl}/educacion/api//all`
     );
@@ -19,6 +20,13 @@ export class EducationService {
   public addEducation(education: Education): Observable<Education> {
     return this.http.post<Education>(
       `${this.apiServerUrl}/educacion/api/add`,
+=======
+    return this.http.get<Education[]>(`${this.apiServerUrl}/api/educacion/all`);
+  }
+  public addEducation(education: Education): Observable<Education> {
+    return this.http.post<Education>(
+      `${this.apiServerUrl}/api/educacion/add`,
+>>>>>>> cf9c5db78b605eba33a8ed1ac9c6a9d2a4b68abb
       education
     );
   }
