@@ -8,27 +8,27 @@ import { Education } from '../models/education';
   providedIn: 'root',
 })
 export class EducationService {
-  private apiServerUrl = 'https://porfoliobackrenderarg.onrender.com/';
+  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
   constructor(private http: HttpClient) {}
 
   public getEducation(): Observable<Education[]> {
-    return this.http.get<Education[]>(`${this.apiServerUrl}/educacion/all`);
+    return this.http.get<Education[]>(`${this.apiServerUrl}/api/education/all`);
   }
   public addEducation(education: Education): Observable<Education> {
     return this.http.post<Education>(
-      `${this.apiServerUrl}/educacion/add`,
+      `${this.apiServerUrl}/api/education/add`,
       education
     );
   }
   public updateEducation(education: Education): Observable<Education> {
     return this.http.put<Education>(
-      `${this.apiServerUrl}/educacion/update`,
+      `${this.apiServerUrl}/api/education/update`,
       education
     );
   }
   public deleteEducation(educationId: number): Observable<void> {
     return this.http.delete<void>(
-      `${this.apiServerUrl}/educacion/delete/${educationId}`
+      `${this.apiServerUrl}/api/education/delete/${educationId}`
     );
   }
 }

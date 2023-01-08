@@ -14,11 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { MiperfilComponent } from './miperfil/miperfil.component';
-import { IndexComponent } from './index/index.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 
-import { AuthInterceptor } from './helpers/auth.interceptor';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,8 +30,6 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     ProyectosComponent,
     FooterComponent,
     ErrorComponent,
-
-    IndexComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,13 +38,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

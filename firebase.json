@@ -1,11 +1,8 @@
 {
   "hosting": {
+    "site": "frontend-ang",
     "public": "dist/proyecto-angular",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
