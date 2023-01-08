@@ -20,6 +20,7 @@ export class EducationService {
       education
     );
   }
+
   public updateEducation(education: Education): Observable<Education> {
     return this.http.put<Education>(
       `${this.apiServerUrl}/api/education/update`,
