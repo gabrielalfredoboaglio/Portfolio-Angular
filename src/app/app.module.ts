@@ -16,7 +16,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IniciarSessionComponent } from './iniciar-session/iniciar-session.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
@@ -41,6 +41,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
