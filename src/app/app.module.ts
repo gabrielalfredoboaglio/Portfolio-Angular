@@ -17,6 +17,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { IniciarSessionComponent } from './iniciar-session/iniciar-session.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     ProyectosComponent,
     FooterComponent,
     ErrorComponent,
+    IniciarSessionComponent,
   ],
   imports: [
     BrowserModule,
