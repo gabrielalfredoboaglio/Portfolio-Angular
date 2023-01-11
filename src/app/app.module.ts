@@ -15,10 +15,11 @@ import { ErrorComponent } from './error/error.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IniciarSessionComponent } from './iniciar-session/iniciar-session.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

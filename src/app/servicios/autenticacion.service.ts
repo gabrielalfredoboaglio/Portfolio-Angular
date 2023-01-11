@@ -24,4 +24,7 @@ export class AutenticacionService {
       })
     );
   }
+  get UsuarioAutenticado() {
+    return this.currentUserSubject.value;
+  }
 }
