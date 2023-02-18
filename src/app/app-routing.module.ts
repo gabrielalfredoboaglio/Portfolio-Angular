@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IniciarSessionComponent } from './iniciar-session/iniciar-session.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { IniciarSessionComponent } from './pages/iniciar-session/iniciar-session.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 
 const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },

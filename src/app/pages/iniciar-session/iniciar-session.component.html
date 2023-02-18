@@ -1,10 +1,11 @@
+<meta name="referrer" content="no-referrer-when-downgrade" />
 <h1 class="mb-5">Iniciar Sesion</h1>
 <form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input
       type="email"
-      formControlname="email"
+      formControlName="email"
       class="form-control"
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
@@ -22,3 +23,4 @@
 
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+{{ form.value | json }}

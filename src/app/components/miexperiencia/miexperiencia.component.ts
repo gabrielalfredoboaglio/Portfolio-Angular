@@ -1,10 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Education } from '../models/education';
-import { Experiencia } from '../models/experiencia';
-import { EducationService } from '../servicios/education.service';
-import { ExperienciaService } from '../servicios/experiencia.service';
+import { Education } from '../../models/education';
+import { Experiencia } from '../../models/experiencia';
+import { EducationService } from '../../services/education.service';
+import { ExperienciaService } from '../../services/experiencia.service';
 
 @Component({
   selector: 'app-miexperiencia',

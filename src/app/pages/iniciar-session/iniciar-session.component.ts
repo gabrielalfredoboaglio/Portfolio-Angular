@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacionService } from '../servicios/autenticacion.service';
+import { AutenticacionService } from '../../services/autenticacion.service';
 @Component({
   selector: 'app-iniciar-session',
   templateUrl: './iniciar-session.component.html',
   styleUrls: ['./iniciar-session.component.css'],
 })
-export class IniciarSessionComponent implements OnInit {
+export class IniciarSessionComponent {
   form: FormGroup;
 
   constructor(
@@ -20,23 +20,23 @@ export class IniciarSessionComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
-  ngOnInit(): void {}
 
   get Email() {
-    return this.form.get('email');
+    return this.form.get('email')?.value;
   }
   get Password() {
-    return this.form.get('password');
+    return this.form.get('password')?.value;
   }
 
   onEnviar(event: Event) {
-    event.preventDefault;
+    event.preventDefault();
+    alert('formulario enviado');
     this.autenticacionService
       .IniciarSesion(this.form.value)
       .subscribe((data) => {
         console.log('DATA:' + JSON.stringify(data));
 
-        this.ruta.navigate(['/portfolio']);
+        //this.ruta.navigate(['/portfolio']);
       });
   }
 }

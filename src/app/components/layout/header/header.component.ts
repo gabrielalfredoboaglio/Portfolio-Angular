@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Header } from '../models/header';
-import { InfoService } from '../servicios/info.service';
+import { Header } from '../../../models/header';
+import { InfoService } from '../../../services/info.service';
 
 @Component({
   selector: 'app-header',

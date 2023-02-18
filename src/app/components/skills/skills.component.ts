@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Skill } from '../models/skill';
-import { SkillsService } from '../servicios/skills.service';
+import { Skill } from '../../models/skill';
+import { SkillsService } from '../../services/skills.service';
 
 @Component({
   selector: 'app-skills',

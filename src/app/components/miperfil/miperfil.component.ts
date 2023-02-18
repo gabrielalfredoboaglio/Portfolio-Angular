@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../models/usuario';
+import { Usuario } from '../../models/usuario';
 
-import { HeaderService } from '../servicios/header.service';
+import { HeaderService } from '../../services/header.service';
 
 @Component({
   selector: 'app-miperfil',

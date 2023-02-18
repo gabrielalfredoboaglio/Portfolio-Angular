@@ -3,23 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/layout/navbar/navbar.component';
 
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/layout/header/header.component';
 
-import { MiexperienciaComponent } from './miexperiencia/miexperiencia.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ProyectosComponent } from './proyectos/proyectos.component';
-import { FooterComponent } from './footer/footer.component';
-import { ErrorComponent } from './error/error.component';
+import { MiexperienciaComponent } from './components/miexperiencia/miexperiencia.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { ErrorComponent } from './components/error/error.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { MiperfilComponent } from './miperfil/miperfil.component';
+import { MiperfilComponent } from './components/miperfil/miperfil.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IniciarSessionComponent } from './iniciar-session/iniciar-session.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { InterceptorService } from './servicios/interceptor.service';
+import { IniciarSessionComponent } from './pages/iniciar-session/iniciar-session.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
