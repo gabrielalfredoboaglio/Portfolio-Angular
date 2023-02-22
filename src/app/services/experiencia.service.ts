@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { apiBackendUrl } from '../constant';
 import { Experiencia } from '../models/experiencia';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExperienciaService {
-  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
+  private apiServerUrl = apiBackendUrl;
   constructor(private http: HttpClient) {}
 
   public getExperiencia(): Observable<Experiencia[]> {

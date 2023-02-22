@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { apiBackendUrl } from '../constant';
 
 import { Skill } from '../models/skill';
 
@@ -8,7 +9,7 @@ import { Skill } from '../models/skill';
   providedIn: 'root',
 })
 export class SkillsService {
-  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
+  private apiServerUrl = apiBackendUrl;
 
   constructor(private http: HttpClient) {}
 

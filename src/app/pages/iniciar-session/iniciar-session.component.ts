@@ -30,13 +30,9 @@ export class IniciarSessionComponent {
 
   onEnviar(event: Event) {
     event.preventDefault();
-    alert('formulario enviado');
-    this.autenticacionService
-      .IniciarSesion(this.form.value)
-      .subscribe((data) => {
-        console.log('DATA:' + JSON.stringify(data));
 
-        //this.ruta.navigate(['/portfolio']);
-      });
+    const result = this.autenticacionService.IniciarSesion(this.form.value);
+    console.log(result);
+    this.ruta.navigateByUrl('portfolio');
   }
 }

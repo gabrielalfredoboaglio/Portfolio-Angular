@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { apiBackendUrl } from '../constant';
 import { Project } from '../models/project';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
+  private apiServerUrl = apiBackendUrl;
 
   constructor(private http: HttpClient) {}
 

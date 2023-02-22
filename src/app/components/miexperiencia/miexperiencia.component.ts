@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { Education } from '../../models/education';
 import { Experiencia } from '../../models/experiencia';
 import { EducationService } from '../../services/education.service';
@@ -21,7 +22,8 @@ export class MiexperienciaComponent implements OnInit {
 
   constructor(
     private educationService: EducationService,
-    private experienciaService: ExperienciaService
+    private experienciaService: ExperienciaService,
+    private autenticacionService: AutenticacionService
   ) {}
 
   ngOnInit(): void {

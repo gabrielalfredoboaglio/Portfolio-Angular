@@ -1,23 +1,33 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { apiBackendUrl } from '../constant';
 import { Education } from '../models/education';
+import { AutenticacionService } from './autenticacion.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EducationService {
-  private apiServerUrl = 'https://portfolioback-ah2t.onrender.com';
-  constructor(private http: HttpClient) {}
+  private apiServerUrl = apiBackendUrl;
+  constructor(
+    private http: HttpClient,
+    private autenticacionService: AutenticacionService
+  ) {}
 
   public getEducation(): Observable<Education[]> {
     return this.http.get<Education[]>(`${this.apiServerUrl}/api/educacion/all`);
   }
   public addEducation(education: Education): Observable<Education> {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Authorization', `Bearer ${this.autenticacionService.token}`);
+
     return this.http.post<Education>(
       `${this.apiServerUrl}/api/educacion/add`,
-      education
+      education,
+      { headers: headers }
     );
   }
 
