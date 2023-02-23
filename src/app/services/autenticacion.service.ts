@@ -9,6 +9,7 @@ import { apiBackendUrl } from '../constant';
 export class AutenticacionService {
   url = apiBackendUrl + '/login';
   currentUserSubject: BehaviorSubject<any>;
+  private isAuthenticatedValue = false;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<any>(
@@ -25,6 +26,7 @@ export class AutenticacionService {
         const token = data.body.token;
         if (token) {
           localStorage.setItem('token', token);
+          this.setAuthenticated(true);
         } else {
         }
       });
@@ -36,5 +38,15 @@ export class AutenticacionService {
 
   get UsuarioAutenticado() {
     return this.currentUserSubject.value;
+  }
+
+  public isAuthenticated(): boolean {
+    // Lógica para verificar si el usuario está autenticado
+
+    return this.isAuthenticatedValue;
+  }
+
+  public setAuthenticated(value: boolean): void {
+    this.isAuthenticatedValue = value;
   }
 }

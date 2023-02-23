@@ -17,7 +17,10 @@
       </div>
 
       <div class="row mt-4">
-        <div class="d-grid gap-2 d-md-block">
+        <div
+          class="d-grid gap-2 d-md-block"
+          *ngIf="autenticacionService.isAuthenticated()"
+        >
           <h3>Añadir Educacion</h3>
           <button
             class="btn btn-primary"
@@ -29,7 +32,10 @@
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
-        <div class="d-grid gap-2 d-md-block">
+        <div
+          class="d-grid gap-2 d-md-block"
+          *ngIf="autenticacionService.isAuthenticated()"
+        >
           <h3>Añadir Experiencia Laboral</h3>
           <button
             class="btn btn-primary"
@@ -55,6 +61,7 @@
               ></i>
 
               <button
+                *ngIf="autenticacionService.isAuthenticated()"
                 (click)="onOpenModal('edit', education)"
                 class="btn btn-primary"
                 type="button"
@@ -64,6 +71,7 @@
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
               <button
+                *ngIf="autenticacionService.isAuthenticated()"
                 (click)="onOpenModal('delete', education)"
                 class="btn btn-primary"
                 type="button"
@@ -93,6 +101,7 @@
                 style="top: 2px; left: -35px; font-size: 22px"
               ></i>
               <button
+                *ngIf="autenticacionService.isAuthenticated()"
                 (click)="onOpenModalExp('edit', experiencia)"
                 class="btn btn-primary"
                 type="button"
@@ -102,6 +111,7 @@
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
               <button
+                *ngIf="autenticacionService.isAuthenticated()"
                 (click)="onOpenModalExp('delete', experiencia)"
                 class="btn btn-primary"
                 type="button"

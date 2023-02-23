@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IniciarSessionComponent } from './pages/iniciar-session/iniciar-session.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { InterceptorService } from './services/interceptor.service';
+import { AutenticacionService } from './services/autenticacion.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,7 @@ import { InterceptorService } from './services/interceptor.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
-  ],
+  providers: [{ provide: AutenticacionService }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

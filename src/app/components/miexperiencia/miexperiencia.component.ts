@@ -23,7 +23,7 @@ export class MiexperienciaComponent implements OnInit {
   constructor(
     private educationService: EducationService,
     private experienciaService: ExperienciaService,
-    private autenticacionService: AutenticacionService
+    public autenticacionService: AutenticacionService
   ) {}
 
   ngOnInit(): void {

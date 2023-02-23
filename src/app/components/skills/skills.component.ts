@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { Skill } from '../../models/skill';
 import { SkillsService } from '../../services/skills.service';
 
@@ -14,7 +15,10 @@ export class SkillsComponent implements OnInit {
   public editSkill: Skill | undefined;
   public deleteSkill: Skill | undefined;
 
-  constructor(private skillsService: SkillsService) {}
+  constructor(
+    private skillsService: SkillsService,
+    public autenticacionService: AutenticacionService
+  ) {}
 
   ngOnInit(): void {
     this.getSkill();

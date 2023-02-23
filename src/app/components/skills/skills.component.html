@@ -13,6 +13,7 @@
       </h1>
       <div class="d-grid gap-2 d-md-block">
         <button
+          *ngIf="autenticacionService.isAuthenticated()"
           (click)="onOpenModal('add')"
           class="btn btn-primary"
           type="button"
@@ -27,7 +28,10 @@
 
     <div class="row" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
       <div class="col-x1-6 col-sm-4" *ngFor="let skill of skills">
-        <div class="d-grid gap-2 d-md-block">
+        <div
+          class="d-grid gap-2 d-md-block"
+          *ngIf="autenticacionService.isAuthenticated()"
+        >
           <button
             (click)="onOpenModal('edit', skill)"
             class="btn btn-primary"
@@ -38,7 +42,10 @@
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
-        <div class="d-grid gap-2 d-md-block">
+        <div
+          class="d-grid gap-2 d-md-block"
+          *ngIf="autenticacionService.isAuthenticated()"
+        >
           <button
             (click)="onOpenModal('delete', skill)"
             class="btn btn-primary"

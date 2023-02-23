@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 import { Usuario } from '../../models/usuario';
 
 import { HeaderService } from '../../services/header.service';
@@ -12,7 +13,10 @@ import { HeaderService } from '../../services/header.service';
 export class MiperfilComponent implements OnInit {
   public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
-  constructor(private headerService: HeaderService) {}
+  constructor(
+    private headerService: HeaderService,
+    public autenticacionService: AutenticacionService
+  ) {}
 
   ngOnInit(): void {
     this.getUser();

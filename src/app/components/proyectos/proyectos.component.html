@@ -14,7 +14,10 @@
           Mis proyectos
         </h1>
 
-        <div class="d-grid gap-2 d-md-block">
+        <div
+          class="d-grid gap-2 d-md-block"
+          *ngIf="autenticacionService.isAuthenticated()"
+        >
           <button
             (click)="onOpenModal('add')"
             class="btn btn-primary"
@@ -121,7 +124,10 @@
 
       <div class="row pb-3" *ngFor="let project of projects">
         <div class="service-box col-lg-4 col-md-6 text-center mb-5">
-          <div class="d-grid gap-2 d-md-block">
+          <div
+            class="d-grid gap-2 d-md-block"
+            *ngIf="autenticacionService.isAuthenticated()"
+          >
             <button
               (click)="onOpenModal('edit', project)"
               class="btn btn-primary"
@@ -132,7 +138,10 @@
               <i class="fa-solid fa-pen-to-square"></i>
             </button>
           </div>
-          <div class="d-grid gap-2 d-md-block">
+          <div
+            class="d-grid gap-2 d-md-block"
+            *ngIf="autenticacionService.isAuthenticated()"
+          >
             <button
               (click)="onOpenModal('delete', project)"
               class="btn btn-primary"
