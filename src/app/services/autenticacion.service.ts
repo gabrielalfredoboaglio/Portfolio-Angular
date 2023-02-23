@@ -10,6 +10,7 @@ export class AutenticacionService {
   url = apiBackendUrl + '/login';
   currentUserSubject: BehaviorSubject<any>;
   private isAuthenticatedValue = false;
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<any>(
@@ -48,5 +49,10 @@ export class AutenticacionService {
 
   public setAuthenticated(value: boolean): void {
     this.isAuthenticatedValue = value;
+  }
+
+  public cerrarSesion(): void {
+    localStorage.removeItem('token');
+    this.setAuthenticated(false);
   }
 }
