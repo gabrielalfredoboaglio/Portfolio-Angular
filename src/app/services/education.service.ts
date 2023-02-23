@@ -32,14 +32,23 @@ export class EducationService {
   }
 
   public updateEducation(education: Education): Observable<Education> {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Authorization', `Bearer ${this.autenticacionService.token}`);
+
     return this.http.put<Education>(
       `${this.apiServerUrl}/api/educacion/update`,
-      education
+      education,
+      { headers: headers }
     );
   }
   public deleteEducation(educationId: number): Observable<void> {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Authorization', `Bearer ${this.autenticacionService.token}`);
     return this.http.delete<void>(
-      `${this.apiServerUrl}/api/educacion/delete/${educationId}`
+      `${this.apiServerUrl}/api/educacion/delete/${educationId}`,
+      { headers: headers }
     );
   }
 }
