@@ -8,19 +8,18 @@
     id="home"
     style="min-height: 100vh"
   >
-    <div class="container" (click)="onOpenModal('edit', header)">
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7 text-center text-lg-left">
           <h3 class="text-white font-weight-normal mb-3">Hola, mi nombre es</h3>
           <h1
-            *ngIf="header"
             class="display-3 text-uppercase text-primary mb-2"
             style="-webkit-text-stroke: 4px #ffffff"
           >
             Gabriel Boaglio
           </h1>
 
-          <div class="col row" *ngIf="header">
+          <div class="col row">
             <div class="text">y soy desarrollador full stack Jr</div>
           </div>
           <div
@@ -34,23 +33,10 @@
             >
           </div>
         </div>
-        <div
-          class="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img"
-          *ngIf="header"
-        >
-          <div class="d-grid gap-2 d-md-block">
-            <button
-              class="btn btn-light"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#editHeaderUsuarioModal"
-            >
-              <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-          </div>
+        <div class="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img">
           <img
             class="img-fluid w-75 rounded-circle shadow-sm"
-            src="https://fakeimg.pl/350x200/?text=Hello"
+            src="https://c8.alamy.com/compes/2cfja28/lenguaje-de-programacion-java-2cfja28.jpg"
             alt=""
           />
         </div>
@@ -58,91 +44,3 @@
     </div>
   </div>
 </section>
-
-<!-- Header End -->
-<!--  Edit header modal  -->
-<div
-  class="modal fade modales"
-  id="editHeaderUsuarioModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="editHeaderUsuarioModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center" id="editHeaderUsuarioModalLabel">
-          Editar Informacion
-        </h5>
-      </div>
-      <div class="modal-body">
-        <form #editForm="ngForm">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input
-              type="text"
-              ngModel="{{ header?.nombre }}"
-              name="nombre"
-              class="form-control"
-              id="nombre"
-              aria-describedby="nombre"
-              placeholder="Nombre"
-            />
-          </div>
-          <input
-            type="hidden"
-            ngModel="{{ header?.id }}"
-            name="id"
-            class="form-control"
-            id="id"
-            placeholder=""
-          />
-
-          <div class="form-group">
-            <label for="titulo">Profesion</label>
-            <input
-              type="text"
-              ngModel="{{ header?.titulo }}"
-              name="titulo"
-              class="form-control"
-              id="titulo"
-              placeholder="Titulo"
-            />
-          </div>
-          <div class="form-group">
-            <label for="fotoPerfil">FotoDePerfil</label>
-            <input
-              type="text"
-              ngModel="{{ header?.fotoPerfil }}"
-              name="fotoPerfil"
-              class="form-control"
-              id="fotoPerfil"
-              placeholder="Foto de Perfil"
-            />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              data-dismiss="modal"
-              class="btn btn-secondary"
-              data-bs-toggle="modal"
-              data-bs-target="#cerrarHeaderUsuarioModal"
-            >
-              Cerrar
-            </button>
-            <button
-              (click)="onUpdateHeader(editForm.value)"
-              data-dismiss="modal"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#editHeaderUsuarioModal"
-            >
-              Guardar Cambios
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>

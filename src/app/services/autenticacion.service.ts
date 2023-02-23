@@ -55,4 +55,7 @@ export class AutenticacionService {
     localStorage.removeItem('token');
     this.setAuthenticated(false);
   }
+  public getIsAuthenticated(): Observable<boolean> {
+    return this.isAuthenticatedSubject.asObservable();
+  }
 }
