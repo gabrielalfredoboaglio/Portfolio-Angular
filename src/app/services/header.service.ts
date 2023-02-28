@@ -9,7 +9,7 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root',
 })
 export class HeaderService {
-  private apiServerUrl = apiBackendUrl;
+  private apiServerUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) {}
 
   public getUser(): Observable<Usuario> {

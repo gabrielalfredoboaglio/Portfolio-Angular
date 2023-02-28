@@ -3,11 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import { apiBackendUrl } from '../constant';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AutenticacionService {
-  url = apiBackendUrl + '/login';
+  url = environment.apiBaseUrl + '/login';
   currentUserSubject: BehaviorSubject<any>;
   private isAuthenticatedValue = false;
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);

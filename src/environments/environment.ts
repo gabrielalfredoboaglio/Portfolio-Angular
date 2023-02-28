@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: '*',
+  apiBaseUrl: 'https://portfolioback-ah2t.onrender.com',
 };
 
 /*

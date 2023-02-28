@@ -1,96 +1,106 @@
-[debug] [2023-02-17T23:09:03.361Z] ----------------------------------------------------------------------
-[debug] [2023-02-17T23:09:03.365Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2023-02-17T23:09:03.366Z] CLI Version:   11.20.0
-[debug] [2023-02-17T23:09:03.366Z] Platform:      win32
-[debug] [2023-02-17T23:09:03.366Z] Node Version:  v16.17.0
-[debug] [2023-02-17T23:09:03.367Z] Time:          Fri Feb 17 2023 20:09:03 GMT-0300 (hora estándar de Argentina)
-[debug] [2023-02-17T23:09:03.367Z] ----------------------------------------------------------------------
+[debug] [2023-02-28T00:39:51.860Z] ----------------------------------------------------------------------
+[debug] [2023-02-28T00:39:51.862Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-02-28T00:39:51.862Z] CLI Version:   11.24.0
+[debug] [2023-02-28T00:39:51.862Z] Platform:      win32
+[debug] [2023-02-28T00:39:51.863Z] Node Version:  v16.17.0
+[debug] [2023-02-28T00:39:51.864Z] Time:          Mon Feb 27 2023 21:39:51 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-02-28T00:39:51.864Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-02-17T23:09:03.373Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[debug] [2023-02-17T23:09:03.483Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-02-17T23:09:03.484Z] > authorizing via signed-in user (gaboindependiente@gmail.com)
-[debug] [2023-02-17T23:09:03.484Z] [iam] checking project fronted-argentina-programa for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-02-17T23:09:03.485Z] > refreshing access token with scopes: []
-[debug] [2023-02-17T23:09:03.486Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2023-02-17T23:09:03.486Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-02-17T23:09:03.684Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2023-02-17T23:09:03.685Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-02-17T23:09:03.695Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions [none]
-[debug] [2023-02-17T23:09:03.695Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions x-goog-quota-user=projects/fronted-argentina-programa
-[debug] [2023-02-17T23:09:03.696Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-02-17T23:09:03.848Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2023-02-17T23:09:03.848Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
-[debug] [2023-02-17T23:09:04.730Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions 200
-[debug] [2023-02-17T23:09:04.730Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {}
-[debug] [2023-02-17T23:09:04.730Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fronted-argentina-programa:
+[debug] [2023-02-28T00:39:51.920Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-28T00:39:51.920Z] > authorizing via signed-in user (gaboindependiente@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
 
-  firebase.projects.get
-  firebasehosting.sites.update
-[debug] [2023-02-17T23:09:04.731Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa [none]
-[debug] [2023-02-17T23:09:05.245Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa 403
-[debug] [2023-02-17T23:09:05.245Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2023-02-17T23:09:05.246Z] HTTP Error: 403, The caller does not have permission
-[debug] [2023-02-17T23:09:05.247Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\gabo_\OneDrive\Escritorio\ProyectoAngular\ProyectoAngular
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-02-28T00:39:58.157Z] Using project from CLI flag: fronted-argentina-programa
+[debug] [2023-02-28T00:39:58.158Z] > refreshing access token with scopes: []
+[debug] [2023-02-28T00:39:58.159Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-28T00:39:58.160Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-28T00:39:58.359Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-02-28T00:39:58.360Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-28T00:39:58.366Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa [none]
+[debug] [2023-02-28T00:39:58.927Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa 403
+[debug] [2023-02-28T00:39:58.927Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-02-28T00:39:58.927Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-02-28T00:39:58.929Z] FirebaseError: HTTP Error: 403, The caller does not have permission
     at responseToError (C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
     at RetryOperation._fn (C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 [error] 
 [error] Error: Failed to get Firebase project fronted-argentina-programa. Please make sure the project exists and your account has permission to access it.
-[debug] [2023-02-17T23:09:32.974Z] ----------------------------------------------------------------------
-[debug] [2023-02-17T23:09:32.976Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2023-02-17T23:09:32.976Z] CLI Version:   11.20.0
-[debug] [2023-02-17T23:09:32.977Z] Platform:      win32
-[debug] [2023-02-17T23:09:32.977Z] Node Version:  v16.17.0
-[debug] [2023-02-17T23:09:32.978Z] Time:          Fri Feb 17 2023 20:09:32 GMT-0300 (hora estándar de Argentina)
-[debug] [2023-02-17T23:09:32.978Z] ----------------------------------------------------------------------
+[debug] [2023-02-28T00:41:12.112Z] ----------------------------------------------------------------------
+[debug] [2023-02-28T00:41:12.114Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-02-28T00:41:12.114Z] CLI Version:   11.24.0
+[debug] [2023-02-28T00:41:12.115Z] Platform:      win32
+[debug] [2023-02-28T00:41:12.115Z] Node Version:  v16.17.0
+[debug] [2023-02-28T00:41:12.116Z] Time:          Mon Feb 27 2023 21:41:12 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-02-28T00:41:12.116Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-02-17T23:09:33.052Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-02-17T23:09:33.053Z] > authorizing via signed-in user (gaboindependiente@gmail.com)
-[debug] [2023-02-17T23:09:33.053Z] [iam] checking project fronted-argentina-programa for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-02-17T23:09:33.055Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions [none]
-[debug] [2023-02-17T23:09:33.055Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions x-goog-quota-user=projects/fronted-argentina-programa
-[debug] [2023-02-17T23:09:33.056Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-02-17T23:09:34.159Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions 200
-[debug] [2023-02-17T23:09:34.159Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {}
-[debug] [2023-02-17T23:09:34.160Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fronted-argentina-programa:
+[debug] [2023-02-28T00:41:12.172Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-28T00:41:12.172Z] > authorizing via signed-in user (gaboindependiente@gmail.com)
+[debug] [2023-02-28T00:41:12.172Z] [iam] checking project fronted-argentina-programa for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-02-28T00:41:12.174Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions [none]
+[debug] [2023-02-28T00:41:12.174Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions x-goog-quota-user=projects/fronted-argentina-programa
+[debug] [2023-02-28T00:41:12.174Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-28T00:41:13.457Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions 200
+[debug] [2023-02-28T00:41:13.457Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {}
+[debug] [2023-02-28T00:41:13.457Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fronted-argentina-programa:
 
   firebase.projects.get
   firebasehosting.sites.update
-[debug] [2023-02-17T23:09:34.161Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa [none]
-[debug] [2023-02-17T23:09:34.638Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa 403
-[debug] [2023-02-17T23:09:34.638Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2023-02-17T23:09:34.639Z] HTTP Error: 403, The caller does not have permission
-[debug] [2023-02-17T23:09:34.640Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+[debug] [2023-02-28T00:41:13.458Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa [none]
+[debug] [2023-02-28T00:41:13.939Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa 403
+[debug] [2023-02-28T00:41:13.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-02-28T00:41:13.940Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-02-28T00:41:13.941Z] FirebaseError: HTTP Error: 403, The caller does not have permission
     at responseToError (C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
     at RetryOperation._fn (C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 [error] 
 [error] Error: Failed to get Firebase project fronted-argentina-programa. Please make sure the project exists and your account has permission to access it.
-[debug] [2023-02-17T23:10:23.188Z] ----------------------------------------------------------------------
-[debug] [2023-02-17T23:10:23.190Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2023-02-17T23:10:23.191Z] CLI Version:   11.23.1
-[debug] [2023-02-17T23:10:23.191Z] Platform:      win32
-[debug] [2023-02-17T23:10:23.191Z] Node Version:  v16.17.0
-[debug] [2023-02-17T23:10:23.192Z] Time:          Fri Feb 17 2023 20:10:23 GMT-0300 (hora estándar de Argentina)
-[debug] [2023-02-17T23:10:23.192Z] ----------------------------------------------------------------------
+[debug] [2023-02-28T00:44:18.717Z] ----------------------------------------------------------------------
+[debug] [2023-02-28T00:44:18.719Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-02-28T00:44:18.719Z] CLI Version:   11.24.0
+[debug] [2023-02-28T00:44:18.719Z] Platform:      win32
+[debug] [2023-02-28T00:44:18.719Z] Node Version:  v16.17.0
+[debug] [2023-02-28T00:44:18.720Z] Time:          Mon Feb 27 2023 21:44:18 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-02-28T00:44:18.721Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-02-17T23:10:23.274Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-02-17T23:10:23.274Z] > authorizing via signed-in user (gaboindependiente@gmail.com)
-[debug] [2023-02-17T23:10:23.274Z] [iam] checking project fronted-argentina-programa for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-02-17T23:10:23.277Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions [none]
-[debug] [2023-02-17T23:10:23.277Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions x-goog-quota-user=projects/fronted-argentina-programa
-[debug] [2023-02-17T23:10:23.278Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-02-17T23:10:24.366Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions 200
-[debug] [2023-02-17T23:10:24.366Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {}
-[debug] [2023-02-17T23:10:24.367Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fronted-argentina-programa:
+[debug] [2023-02-28T00:44:18.779Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-28T00:44:18.779Z] > authorizing via signed-in user (gaboindependiente@gmail.com)
+[debug] [2023-02-28T00:44:18.779Z] [iam] checking project fronted-argentina-programa for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-02-28T00:44:18.782Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions [none]
+[debug] [2023-02-28T00:44:18.782Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions x-goog-quota-user=projects/fronted-argentina-programa
+[debug] [2023-02-28T00:44:18.782Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-28T00:44:20.049Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions 200
+[debug] [2023-02-28T00:44:20.050Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fronted-argentina-programa:testIamPermissions {}
+[debug] [2023-02-28T00:44:20.050Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fronted-argentina-programa:
 
   firebase.projects.get
   firebasehosting.sites.update
-[debug] [2023-02-17T23:10:24.368Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa [none]
-[debug] [2023-02-17T23:10:24.628Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa 403
-[debug] [2023-02-17T23:10:24.629Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2023-02-17T23:10:24.629Z] HTTP Error: 403, The caller does not have permission
-[debug] [2023-02-17T23:10:24.631Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+[debug] [2023-02-28T00:44:20.051Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa [none]
+[debug] [2023-02-28T00:44:20.644Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa 403
+[debug] [2023-02-28T00:44:20.644Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fronted-argentina-programa {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-02-28T00:44:20.645Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-02-28T00:44:20.646Z] FirebaseError: HTTP Error: 403, The caller does not have permission
     at responseToError (C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
     at RetryOperation._fn (C:\Users\gabo_\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)

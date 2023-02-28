@@ -14,7 +14,7 @@ import { AutenticacionService } from './autenticacion.service';
   providedIn: 'root',
 })
 export class ExperienciaService {
-  private apiServerUrl = apiBackendUrl;
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(
     private http: HttpClient,

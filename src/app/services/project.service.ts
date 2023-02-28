@@ -10,7 +10,7 @@ import { AutenticacionService } from './autenticacion.service';
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiServerUrl = apiBackendUrl;
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(
     private http: HttpClient,

@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { apiBackendUrl } from '../constant';
-
+import { environment } from 'src/environments/environment';
 import { Skill } from '../models/skill';
 import { AutenticacionService } from './autenticacion.service';
 
@@ -10,7 +10,7 @@ import { AutenticacionService } from './autenticacion.service';
   providedIn: 'root',
 })
 export class SkillsService {
-  private apiServerUrl = apiBackendUrl;
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(
     private http: HttpClient,

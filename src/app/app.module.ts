@@ -19,7 +19,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IniciarSessionComponent } from './pages/iniciar-session/iniciar-session.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { InterceptorService } from './services/interceptor.service';
+
 import { AutenticacionService } from './services/autenticacion.service';
 
 @NgModule({

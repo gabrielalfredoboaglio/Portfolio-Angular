@@ -4,5 +4,23 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-right: 25rem;
+  margin-right: 1rem;
+}
+
+.skill-btn {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 1rem;
+}
+
+.experiencia-btn {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 1rem;
 }

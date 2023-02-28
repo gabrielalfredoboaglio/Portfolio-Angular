@@ -9,7 +9,7 @@ import { Header } from '../models/header';
   providedIn: 'root',
 })
 export class InfoService {
-  private apiServerUrl = apiBackendUrl;
+  private apiServerUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) {}
 
   public getInfo(): Observable<Header> {
