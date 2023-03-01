@@ -1,57 +1,76 @@
-<!-- Navbar Start -->
 <section>
   <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="./assets/img/APLogo-20-20.png" width="15%" height="" />
+        <img
+          src="./assets/img/APLogo-20-20.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
       </a>
-      <ul class="list-group list-group-horizontal">
-        <li class="nav-item">
-          <a class="nav-link proyectos-btn" href="#proyectos">Proyectos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link experiencia-btn" href="#experiencia"
-            >Experiencia</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link skill-btn" href="#skill">Skills</a>
-        </li>
-        <li class="list-group-item">
-          <a href="https://www.instagram.com/gabiboaglio/" target="_blank"
-            ><i class="fa-brands fa-instagram fa-2xl"></i
-          ></a>
-        </li>
-        <li class="list-group-item">
-          <a href="https://www.linkedin.com/in/gabriel-boaglio/" target="_blank"
-            ><i class="fa-brands fa-linkedin fa-2xl"></i
-          ></a>
-        </li>
-        <li class="list-group-item">
-          <a href="https://github.com/gabrielalfredoboaglio/" target="_blank"
-            ><i class="fa-brands fa-square-github fa-2xl"></i
-          ></a>
-        </li>
-        <li class="list-group-item">
-          <!-- Button trigger modal -->
-          <i
-            class="fa-solid fa-user fa-2xl"
-            type="button"
-            [routerLink]="['/iniciar-session']"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-          </i>
-        </li>
-      </ul>
+      <button
+        class="navbar-toggler text-white custom-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link proyectos-btn" href="#proyectos">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link experiencia-btn" href="#experiencia"
+              >Experiencia</a
+            >
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link skill-btn" href="#skill">Skills</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="https://www.instagram.com/gabiboaglio/" target="_blank"
+              ><i class="fa-brands fa-instagram fa-2x text-white"></i
+            ></a>
+          </li>
+          <li class="nav-item me-3">
+            <a
+              href="https://www.linkedin.com/in/gabriel-boaglio/"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin fa-2x text-white"></i
+            ></a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="https://github.com/gabrielalfredoboaglio/" target="_blank"
+              ><i class="fa-brands fa-square-github fa-2x text-white"></i
+            ></a>
+          </li>
+          <li class="nav-item me-3">
+            <i
+              class="fa-solid fa-user fa-2x text-white"
+              type="button"
+              [routerLink]="['/iniciar-session']"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            ></i>
+          </li>
+          <li class="nav-item me-3">
+            <button
+              *ngIf="autenticacionService.isAuthenticated()"
+              class="btn btn-danger btn-sm"
+              (click)="cerrarSesion()"
+            >
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <button
-      *ngIf="autenticacionService.isAuthenticated()"
-      (click)="cerrarSesion()"
-    >
-      Cerrar sesión
-    </button>
   </nav>
 </section>
-<!-- Navbar End -->
